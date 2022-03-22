@@ -21,7 +21,7 @@ With **GitHub Actions** you can build end-to-end continuous integration (CI) and
 
 ### Prerequisites
 
-1. You will need a **GitHub** account. If you do not have one, you can sign up for free [here](https://github.com/join)
+1. You will need a **GitHub** account. If you do not have one, you can sign up for free [here](https://github.com/join) 
 
 1. **Microsoft Azure Account**: You will need a valid and active Azure account for this lab. If you do not have one, you can sign up for a [free trial](https://azure.microsoft.com/en-us/free/).
 
