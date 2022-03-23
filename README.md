@@ -9,7 +9,7 @@ languages:
 urlFragment: https://github.com/spring-projects/spring-petclinic
 ---
 
-# Deploying a Java Web App using GitHub actions
+# Deploying a Java Web App using GitHub actions  
 
 Learn to deploy a Java Spring app to Azure App Service and set up a CI/CD workflow using GitHub Actions
 
