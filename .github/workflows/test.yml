@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy WAR app to Azure Web App - testWebAppRakes
+name: Test
 
 on:
   push:
@@ -21,5 +21,5 @@ jobs:
         with:
           java-version: '11'
 
-      - name: Build with Maven
+      - name: Just Echo Secret
         run:  echo ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AEE59F0B6805436CA3284B270A0D7E0C }}
