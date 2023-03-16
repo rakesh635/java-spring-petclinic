@@ -22,4 +22,4 @@ jobs:
           java-version: '11'
 
       - name: Just Echo Secret
-        run:  echo ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AEE59F0B6805436CA3284B270A0D7E0C }}
+        run:  echo 'Hi'
