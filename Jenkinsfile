@@ -26,5 +26,12 @@ pipeline {
     sh "mvn clean package"
    }
   }
+   
+  stage("Deploy in same server")
+  {
+   steps {
+    sh "java -jar target/spring-petclinic-2.2.0.BUILD-SNAPSHOT.jar --server.port=8083"
+   }
+  }
  }
 }  
