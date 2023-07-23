@@ -1,5 +1,5 @@
 pipeline {
- agent { label 'new-jenkins' }
+ agent any
  options { skipDefaultCheckout() }	
  stages {
   stage("Checkout SCM") {
