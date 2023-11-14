@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_java_spring_petclinic_1699966730022-push-trigger-input-set
+  identifier: Build_java_spring_petclinic_1699966730022pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_java_spring_petclinic_1699966730022
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
