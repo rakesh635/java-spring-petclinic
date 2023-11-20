@@ -1,0 +1,14 @@
+inputSet:
+  pipeline:
+    identifier: Build_java_spring_petclinic_1699966730022
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
+  name: pipelinetrigger1
+  identifier: pipelinetrigger1
+  orgIdentifier: default
+  projectIdentifier: default_project
