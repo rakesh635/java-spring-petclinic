@@ -1,0 +1,22 @@
+pipeline:
+  identifier: java_spring_petclinic
+  name: java-spring-petclinic
+  orgIdentifier: default
+  projectIdentifier: TestProject1
+  properties:
+    ci:
+      codebase:
+        build: <+input>
+        connectorRef: account.githubrepo_tp1
+        repoName: java-spring-petclinic
+  stages:
+    - stage:
+        name: Build
+        identifier: Build
+        description: ""
+        type: CI
+        spec:
+          caching:
+            enabled: true
+          cloneCodebase: true
+          platform:
