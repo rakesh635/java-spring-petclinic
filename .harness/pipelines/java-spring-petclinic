@@ -1,5 +1,5 @@
 pipeline:
-  identifier: java_spring_petclinic
+  identifier: javaspringpetclinic
   name: java-spring-petclinic
   orgIdentifier: default
   projectIdentifier: TestProject1
