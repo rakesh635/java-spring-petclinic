@@ -1,14 +1,54 @@
-inputSet:
-  pipeline:
-    identifier: Build_java_spring_petclinic_1699966730022
-    properties:
-      ci:
-        codebase:
-          build:
-            type: branch
-            spec:
-              branch: <+trigger.branch>
-  name: pipelinetrigger1
-  identifier: pipelinetrigger1
+pipeline:
+  identifier: javaspringpetclinic
+  name: java-spring-petclinic
   orgIdentifier: default
-  projectIdentifier: default_project
+  projectIdentifier: TestProject1
+  properties:
+    ci:
+      codebase:
+        build: <+input>
+        connectorRef: account.githubrepo_tp1
+        repoName: java-spring-petclinic
+  stages:
+    - stage:
+        name: Build
+        identifier: Build
+        description: ""
+        type: CI
+        spec:
+          caching:
+            enabled: true
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: RunTests
+                  name: RunTests_1
+                  identifier: RunTests_1
+                  spec:
+                    language: Java
+                    buildTool: Maven
+                    args: test
+                    packages: io.harness
+                    runOnlySelectedTests: true
+                    postCommand: mvn package -DskipTests
+                    reports:
+                      type: JUnit
+                      spec:
+                        paths:
+                          - "target/surefire-reports/*.xml"
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: BuildAndPushDockerRegistry_1
+                  identifier: BuildAndPushDockerRegistry_1
+                  spec:
+                    connectorRef: account.DockerRegistryRakesh635
+                    repo: rakesh635/java-spinr-petclinic-rakesh635
+                    tags:
+                      - <+pipeline.sequenceId>
