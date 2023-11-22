@@ -18,14 +18,12 @@ spec:
         app: petclinic
     spec:
       containers:
-      - image: rakesh635/java-spring-petclinic-rakesh635:VERSIONNUMB
+      - image: rakesh635/java-spring-petclinic-rakesh635:12
         name: petclinic
         ports:
             - containerPort: 8080
-              protocol: TCP
-			  
+              protocol: TCP		  
 ================================
-
 apiVersion: v1
 kind: Service
 metadata:
