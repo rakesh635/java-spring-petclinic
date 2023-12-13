@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: petclinic
+  name: petclinic
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: petclinic
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: petclinic
+    spec:
+      containers:
+      - image: rakesh635/java-spring-petclinic-rakesh635:12
+        name: petclinic
+        ports:
+            - containerPort: 8080
+              protocol: TCP		  
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: petclinic
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
